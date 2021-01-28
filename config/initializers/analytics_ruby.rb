@@ -1,7 +1,7 @@
 require 'segment/analytics'
 
 Analytics = Segment::Analytics.new({ 
-  write_key: 'rJN2Jd5Y4i5Xpv8ZR0GOYnd1NA4wlQah', 
+  write_key: 'WO2NE7Bl9kwlPOMXAiakciAEVGLitCnh', 
   on_error: Proc.new { |status, msg| print msg } 
 })
 
@@ -24,6 +24,7 @@ Analytics.track(
 )
 
 Analytics.page(
+  user_id: 'test-user-id-1',
   category: 'Docs',
   name: 'Ruby library',
   properties: { 
