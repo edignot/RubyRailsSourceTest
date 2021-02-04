@@ -6,7 +6,7 @@ Analytics = Segment::Analytics.new({
 })
 
 Analytics.identify( 
-  user_id: 'test-user-id-1', 
+  user_id: 'test-user-id-11', 
   traits: { 
     email: 'test@mail.com', 
     first_name: 'Name', 
@@ -15,7 +15,7 @@ Analytics.identify(
 )
   
 Analytics.track( 
-  user_id: 'test-user-id-1', 
+  user_id: 'test-user-id-11', 
   event: 'Item Purchased', 
   properties: { 
     revenue: 39.95, 
@@ -23,11 +23,25 @@ Analytics.track(
   }
 )
 
+Analytics.track( 
+  user_id: 'test-user-id-11', 
+  event: 'Event Filtered', 
+  properties: { 
+    revenue: 39.95, 
+    shipping: '2-day'
+  }
+)
+
 Analytics.page(
-  user_id: 'test-user-id-1',
+  user_id: '123',
   category: 'Docs',
   name: 'Ruby library',
-  properties: { 
-    url: 'https://segment.com/libraries/ruby/' 
-  }
+  properties: { url: 'https://segment.com/libraries/ruby/' }
+)
+
+Analytics.screen(
+  user_id: '123',
+  category: 'Docs',
+  name: 'Ruby library',
+  properties: { url: 'https://segment.com/libraries/ruby/' }
 )
